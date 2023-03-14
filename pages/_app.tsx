@@ -5,7 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../src/utils/theme";
 import createEmotionCache from "../src/utils/createEmotionCache";
-import "tailwindcss/tailwind.css";
+
 
 import { store } from "../store/store";
 import { Provider } from "react-redux";
