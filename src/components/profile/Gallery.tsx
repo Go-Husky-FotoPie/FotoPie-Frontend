@@ -26,6 +26,8 @@ export default function Gallery(props: GalleryProps) {
   useEffect(() => {
     if (!router.isReady) return;
     axiosRequest(`/api/profile/${id}`, "GET").then((res) => {
+      console.log(res.data);
+      
       const image = res.data.map((image: ResponseImageData) => (image.imageUrl
       ))
       setGalleryPosts(image);

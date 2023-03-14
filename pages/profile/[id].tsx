@@ -23,10 +23,11 @@ export default function ProfilePage() {
     if (!router.isReady) return;
 
     axiosRequest(`/api/user/${id}`, "GET").then((res) => {
-      if (id !== res.data.id) return router.push("/404");
-      setLastName(res.data.lastName);
-      setFirstName(res.data.firstName);
-      setAvatarPath(res.data.avatarPath);
+      // if (id !== res.data.id) return router.push("/404");
+      console.log(res);
+      setLastName(res.data.data.lastName);
+      setFirstName(res.data.data.firstName);
+      setAvatarPath(res.data.data.avatarPath);
     });
   }, [id]);
 
