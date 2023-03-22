@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import SearchBar from './Search/SearchBar';
 
+
 export default function Header() {
   return (
     <Stack
@@ -39,7 +40,6 @@ export default function Header() {
         </Typography>
 
         <Paper
-          component="form"
           sx={{
             p: '2px 4px',
             width: '100%',
