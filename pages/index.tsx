@@ -8,7 +8,7 @@ import { useCheckToken } from "../src/hooks/useCheckToken";
 export default function Home() {
   useCheckToken();
   return (
-    <Container>
+    <Box sx={{ width: "100%" }}>
       <Box
         sx={{
           backgroundImage: `
@@ -28,13 +28,15 @@ export default function Home() {
           // overflow: 'hidden'
         }}
       >
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "100%", margin: "0 auto" }}>
           <NavBar isFixed={true} />
           <Header />
         </div>
       </Box>
 
-      <PostList />
-    </Container>
+      <Box sx={{ maxWidth: "1600px", m: "auto" }}>
+        <PostList />
+      </Box>
+    </Box>
   );
 }
