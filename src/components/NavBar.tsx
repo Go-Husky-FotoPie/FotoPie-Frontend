@@ -21,6 +21,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../store/store";
 import { getMe } from "../axiosRequest/api/editUser";
 import { logout } from "../../store/auth/authAciton";
+import { useCheckToken } from "../hooks/useCheckToken";
 
 interface NavbarProps {
   isFixed: boolean;
@@ -33,6 +34,7 @@ export default function Navbar({
   color = "#FFFFFF",
   bgColor,
 }: NavbarProps) {
+  useCheckToken();
   const { isAuthenticated } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch<AppDispatch>();
   const [avatarPath, setAvatarPath] = useState("");
