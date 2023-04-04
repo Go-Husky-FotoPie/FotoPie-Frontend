@@ -4,12 +4,7 @@ import { Box } from "@mui/material";
 
 export default function Copyright(props: any) {
   return (
-    <Box
-      sx={{
-
-
-      }}
-    >
+    <Box>
 
       <MuiLink
         color="inherit"
