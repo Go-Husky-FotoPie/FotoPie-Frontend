@@ -4,15 +4,15 @@ WORKDIR /app
 
 COPY ["package*.json", "package-lock.json*", "./"]
 
+RUN npm install
+
+COPY . .
+
 ARG BACKEND_API
 ARG Get_Synonyms_API_Prefix
 
 ENV BACKEND_API=${BACKEND_API}
 ENV Get_Synonyms_API_Prefix=${Get_Synonyms_API_Prefix}
-
-RUN npm install
-
-COPY . .
 
 RUN npm run build
 
