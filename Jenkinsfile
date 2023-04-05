@@ -3,15 +3,10 @@ pipeline {
     tools {
         nodejs '19.8.1'
     }
-    environment {
-        BACKEND_API = credentials('BACKEND_API')
-        Get_Synonyms_API_Prefix = credentials('Get_Synonyms_API_Prefix')
-        ECR_REGISTRY = '123436089261.dkr.ecr.ap-southeast-2.amazonaws.com'
-        DOCKER_IMAGE = 'gohusky-frontend'
-        TAG = 'latest'
-        ECR_REGION = credentials('ECR_REGION')
-        gohusky = credentials('gohusky')
-    }
+    // environment {
+    //     BACKEND_API=credentials('BACKEND_API')
+    //     Get_Synonyms_API_Prefix=credentials('Get_Synonyms_API_Prefix')
+    // }
     stages {
         stage('Checkout') {
             steps {
@@ -19,29 +14,44 @@ pipeline {
             }
         }
 
-        stage('Dockerize') {
+        stage('Build Docker') {
+            environment {
+                BACKEND_API=credentials('BACKEND_API')
+                Get_Synonyms_API_Prefix=credentials('Get_Synonyms_API_Prefix')
+            }
             steps {
-                withCredentials([
-                    string(credentialsId: 'BACKEND_API', variable: 'BACKEND_API'),
-                    string(credentialsId: 'Get_Synonyms_API_Prefix', variable: 'Get_Synonyms_API_Prefix')
-                ]) {
-                    sh "docker build --build-arg BACKEND_API=\"$BACKEND_API\" --build-arg Get_Synonyms_API_Prefix=\"$Get_Synonyms_API_Prefix\" -t ${env.DOCKER_IMAGE}:${env.TAG} ."
-                }
+                sh 'docker build --build-arg BACKEND_API=$BACKEND_API --build-arg Get_Synonyms_API_Prefix=$Get_Synonyms_API_Prefix -t gohusky-frontend .'
+            }
+
+
+
+
+        stage('tag image') {
+            steps {
+        
+                // withAWS(region: 'ap-southeast-2', credentials: 'AWS_CRED') {
+                    sh "docker tag gohusky-frontend:latest 123436089261.dkr.ecr.ap-southeast-2.amazonaws.com/gohusky-frontend:latest"
+                
             }
         }
 
-        stage('Login to AWS ECR') {
-            steps {
-                withAWS(region: "${env.ECR_REGION}", credentials: "${env.gohysky}") {
-                    sh 'aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin ${env.ECR_REGISTRY}'
-                }
-            }
-        }
-
+        // stage('Push Docker Image to ECR') {
+        //     steps {
+        //         withAWS(region: 'ap-southeast-2', credentials: 'AWS_CRED') {
+        //             sh 'aws ecr get-login --no-include-email --region ap-southeast-2 | docker get-login --username AWS --password-stdin 123436089261.dkr.ecr.ap-southeast-2.amazonaws.com'
+        //             // sh "docker push 123436089261.dkr.ecr.ap-southeast-2.amazonaws.com/gohusky-frontend:latest"
+        //         }
         stage('Push Docker Image to ECR') {
             steps {
-                sh "docker tag ${env.DOCKER_IMAGE}:${env.TAG} ${env.ECR_REGISTRY}/${env.DOCKER_IMAGE}:${env.TAG}"
-                sh "docker push ${env.ECR_REGISTRY}/${env.DOCKER_IMAGE}:${env.TAG}"
+
+                // Authenticate with ECR
+                withAWS(region: 'ap-southeast-2', credentials: 'AWS_CRED') {
+                    sh "aws ecr get-login-password --no-include-email --region ap-southeast-2 | docker login --username AWS --password-stdin 123436089261.dkr.ecr.ap-southeast-2.amazonaws.com"
+                
+                // Push the Docker image
+                sh 'docker tag gohusky-frontend:latest 123436089261.dkr.ecr.ap-southeast-2.amazonaws.com/gohusky-frontend:latest'
+                sh 'docker push 123436089261.dkr.ecr.ap-southeast-2.amazonaws.com/gohusky-frontend:latest'
+            }
             }
         }
     }
