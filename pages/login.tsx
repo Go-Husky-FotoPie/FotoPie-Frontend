@@ -21,6 +21,7 @@ import LoginButton from "../src/components/LoginForm/LoginButton";
 import ErrorAlert from "../src/components/LoginForm/ErrorAlert";
 import NavBar from "../src/components/NavBar/NavBar";
 import { NavBarStyles } from "../src/components/NavBar/NavbarBaseline.style";
+import UploadPage from "../src/components/Upload/UploadPage";
 
 // Define a type with the shape of the form values
 export interface IFormInput {
@@ -59,8 +60,8 @@ export default function LogIn() {
 
   return (
     <>
-      <NavBar isFixed={false} color="#000000" baseLine={NavBarStyles} />
-      <Container component="main" maxWidth="xs" sx={{ mt: 10 }}>
+      <UploadPage>
+      <Container component="main" maxWidth="xs" sx={{ mt: 20,mb:20 }}>
         {/* error handling*/}
         {error && <ErrorAlert error={error}></ErrorAlert>}
         <Box
@@ -125,7 +126,8 @@ export default function LogIn() {
           </FormProvider>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
-      </Container>
+        </Container>
+        </UploadPage>
     </>
   );
 }

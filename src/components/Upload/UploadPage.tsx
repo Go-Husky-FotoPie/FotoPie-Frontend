@@ -18,11 +18,12 @@ function UploadPage({ children }: PageProps) {
       sx={{
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundImage: 'linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5)), url(https://source.unsplash.com/random)',
+        backgroundImage: 'linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.7)), url(https://source.unsplash.com/random)',
         backgroundRepeat: 'non-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: '95vh',
+        minWidth:'50vh'
       }}
       >
       <Grid

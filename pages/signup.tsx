@@ -17,6 +17,9 @@ import { useRouter } from "next/router";
 import NavBar from "../src/components/NavBar/NavBar";
 import { NavBarStyles } from "../src/components/NavBar/NavbarBaseline.style";
 import { signUp } from "../src/axiosRequest/api/user";
+import UploadPage from "../src/components/Upload/UploadPage";
+import AlterError from "../src/components/Signup/AlterError";
+
 
 // Define a type with the shape of the form values
 interface IFormInput {
@@ -56,8 +59,9 @@ export default function SignUp() {
 
   return (
     <div>
-      <NavBar isFixed={false} color="#000000" baseLine={NavBarStyles} />
-      <Container component="main" maxWidth="xs">
+
+<UploadPage>
+      <Container component="main" maxWidth="xs" sx={{ mt: 10,mb:10 }}>
         <Box
           sx={{
             marginTop: 8,
@@ -127,7 +131,8 @@ export default function SignUp() {
           </FormProvider>
         </Box>
         <Copyright sx={{ mt: 5 }} />
-      </Container>
+        </Container>
+        </UploadPage>
     </div>
   );
 }
