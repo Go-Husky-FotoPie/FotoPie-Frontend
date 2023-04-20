@@ -20,7 +20,7 @@
   opacity: 0.8;
 }
 .bgImage {
-  width: 55%;
+  width: 50%;
   opacity:0.9;
 }
 
@@ -50,4 +50,8 @@
   .imageSection {
     flex-direction: column;
   }
+  .bgImage {
+  width: 95%;
+  opacity:0.9;
+}
 }

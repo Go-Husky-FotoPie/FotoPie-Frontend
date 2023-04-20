@@ -96,9 +96,9 @@ const NewVariation = (props: Partial<DropzoneProps>) => {
     <>
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          minHeight: '100vh',
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
         }}
       >
         <CssBaseline />
@@ -142,7 +142,11 @@ const NewVariation = (props: Partial<DropzoneProps>) => {
                 </span>{" "}
                 powered by FotoPie+
               </h2>
-              <img src="/create-variation.jpg" alt="" className={styles.bgImage} />
+              <img
+                src="/create-variation.jpg"
+                alt=""
+                className={styles.bgImage}
+              />
             </Box>
             <Dropzone
               onDrop={async (files) => {
@@ -171,8 +175,8 @@ const NewVariation = (props: Partial<DropzoneProps>) => {
               //autoFocus={true}
               radius="xl"
               sx={(theme) => ({
-                minHeight: rem(100),
-                maxWidth: rem(1200),
+                minHeight: rem(120),
+                minWidth: "90%",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -195,7 +199,8 @@ const NewVariation = (props: Partial<DropzoneProps>) => {
                 },
                 "&[data-idle]": {
                   color: theme.black,
-                  backgroundColor: theme.colors.green[2],
+                  //backgroundColor: theme.colors.green[2],
+                  backgroundColor: "#EAE6FF",
                 },
               })}
               {...props}
@@ -211,7 +216,7 @@ const NewVariation = (props: Partial<DropzoneProps>) => {
                     stroke={1.5}
                     color={
                       theme.colors[theme.primaryColor][
-                      theme.colorScheme === "dark" ? 4 : 6
+                        theme.colorScheme === "dark" ? 4 : 6
                       ]
                     }
                   />
@@ -220,7 +225,9 @@ const NewVariation = (props: Partial<DropzoneProps>) => {
                   <IconX
                     size="3.2rem"
                     stroke={1.5}
-                    color={theme.colors.red[theme.colorScheme === "dark" ? 4 : 6]}
+                    color={
+                      theme.colors.red[theme.colorScheme === "dark" ? 4 : 6]
+                    }
                   />
                 </Dropzone.Reject>
                 <Dropzone.Idle>

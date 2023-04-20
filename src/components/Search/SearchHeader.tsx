@@ -9,9 +9,10 @@ export default function SearchHeader({ tagString }: SearchHeaderProps) {
     <Typography
       variant="h3"
       sx={{
-        ml: 5,
+        ml: 2,
         mt: 5,
         fontWeight: 500,
+        fontSize: { xs: "2.0rem", sm: "4rem" }
       }}
     >
       Search: '{tagString} image'

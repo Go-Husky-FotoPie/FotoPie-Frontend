@@ -139,7 +139,7 @@ const SearchPostList = ({
               justifyContent: "center",
               alignItems: "center",
               ml: "auto",
-              mr:"auto",
+              mr: "auto",
             }}
           >
             <Grid
@@ -150,13 +150,19 @@ const SearchPostList = ({
                 width: "100%",
                 height: "100%",
                 display: "flex",
-                justifyContent: "start",
+                justifyContent: { xs: "center", sm: "start", md: "start" },
                 alignItems: "center",
-                ml: "2.5%",
+                ml: { xs: "7%", sm: "2.5%", md: "2.5%" },
                 mt: "3%",
+                mr: "2.5%",
+                // marginLeft: "auto",
+                // marginRight: "auto",
               }}
             >
-              <Typography variant="h4">
+              <Typography
+                variant="h4"
+                sx={{ fontSize: { xs: "1.5rem", sm: "2rem" } }}
+              >
                 We could not find anything for "{tagString}".
                 <br></br>
                 Try to refine your search.
@@ -184,7 +190,7 @@ const SearchPostList = ({
                   sx={{
                     fontSize: "30px",
                     fontWeight: "25px",
-                    marginLeft: "43px",
+                    marginLeft: { xs:"25px", sm:"43px", md:"43px" },
                     marginBottom: "20px",
                     fontFamily: "Work Sans', sans-serif",
                   }}
@@ -192,7 +198,7 @@ const SearchPostList = ({
                   More photos below:
                 </Typography>
 
-                <Box sx={{ marginLeft: "60px", marginRight: "10px" }}>
+                <Box sx={{ marginLeft: "auto", marginRight: "auto" }}>
                   <PostList handleOpen={handleOpen} />
                 </Box>
               </Box>

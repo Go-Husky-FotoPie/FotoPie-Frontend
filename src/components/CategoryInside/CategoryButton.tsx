@@ -9,9 +9,13 @@ interface CategoryButtonProps {
 const CategoryButton = ({ links, resetCategoryState }: CategoryButtonProps) => {
   return (
     <Stack
-      direction={{ xs: "column", sm: "row" }}
+      direction={{ xs: "column", sm: "row", md: "row" }}
       spacing={{ xs: 1, sm: 2, md: 3 }}
-      sx={{ ml: 5, mt: 7, mr: 3 }}
+      sx={{
+        ml: {xs:"5%", sm:"2.3%"},
+        mt: 7,
+        mr: 3,
+      }}
     >
       {links.map((link) => (
         <Button
@@ -19,14 +23,16 @@ const CategoryButton = ({ links, resetCategoryState }: CategoryButtonProps) => {
           variant="outlined"
           color="primary"
           size="small"
-          sx={{ width: "15%" }}
+          sx={{
+            maxWidth: { xs: "100%", sm: "none" },
+            width: { xs: "100%", sm: "15%" },
+          }}
           onClick={() => {
             resetCategoryState(link);
           }}
         >
           {link}
         </Button>
-        //</Link>
       ))}
     </Stack>
   );

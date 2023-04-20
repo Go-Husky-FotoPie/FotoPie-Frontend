@@ -146,19 +146,29 @@ export default function searchPage() {
       <Box maxWidth={"1600px"} margin={"auto"}>
         <SearchHeader tagString={tagString} />
 
-        <Paper
+        <Box
           sx={{
-            p: "2px 4px",
-            width: "100%",
-            mt: 2,
-            ml: 6,
-            "@media (min-width: 600px)": {
-              width: 600,
-            },
+            display: "flex",
+            justifyContent: "start",
+            alignItems: "center",
           }}
         >
-          <SearchBar sx={{ width: "100%" }} />
-        </Paper>
+          <Paper
+            sx={{
+              p: "2px 4px",
+              //width: "100%",
+              width: 450,
+              mt: 2,
+              ml: 2,
+              mr: 2,
+              "@media (min-width: 600px)": {
+                width: 600,
+              },
+            }}
+          >
+            <SearchBar sx={{ width: "90%" }} />
+          </Paper>
+        </Box>
 
         <CategoryButton
           links={links}

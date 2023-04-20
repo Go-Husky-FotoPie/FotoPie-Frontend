@@ -33,7 +33,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ sx }) => {
       <Grid container alignItems="center" justifyContent="space-between">
         <Grid item xs>
           <InputBase
-            sx={{ ml: 1, width: "100%", minWidth: 250 }}
+            sx={{ ml: 1, width: "100%", minWidth: 250, fontSize:{xs:"0.9rem",sm:"1.3rem"} }}
             placeholder="What type of photos can I look for you?"
             value={inputValue}
             onChange={handleChange}
