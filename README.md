@@ -1,48 +1,86 @@
-### FotoPie
+<p align="center">
+<a href="https://www.fotopie.net/">
+<img width="250" src="https://fotopie.s3.ap-southeast-2.amazonaws.com/Screenshot+2023-05-07+at+2.03.36+pm-removebg-preview-removebg-preview+(1).jpg">
+</a>
+</p>
 
-#### Project Introduction
+# Project Introduction
 
-FotoPie is a full-stack web application that provides a platform for photography enthusiasts to post, view, download, purchase, and participate in discussions about various photography works. The app boasts a user-friendly interface, enabling users to effortlessly navigate and engage with different photography posts.
+FotoPie is an open-source, full-stack web application designed to empower photographers, designers, and artists by harnessing the power of AI for generating imaginative images and sharing their creations. Featuring an intuitive and user-friendly interface, FotoPie makes it easy for users to seamlessly search and interact with diverse photography content.
 
-#### Technology Stack
+<p align="center">
+<a href="https://www.fotopie.net/">
+<img  src="https://fotopie.s3.ap-southeast-2.amazonaws.com/Fotopie.png">
+</a>
+</p>
 
-- Frontend: Next.js, TypeScript, MUI, TailwindCSS, Redux, Axios
-- Backend: Nest.js, TypeScript, JWT, Mailgun, Jest, Mongoose, AWS S3, Multer, OpenAI, Stripe
+Here shares the demo video of FotoPie: https://www.youtube.com/watch?v=aR2_ywGywjo
+
+# Features
+
+FotoPie provides the following features:
+<img  src="https://fotopie.s3.ap-southeast-2.amazonaws.com/Screenshot+2023-04-26+at+2.00.00+pm.png">
+
+# Technology Stack
+
+Here is the technology stack used in FotoPie together with its architecture diagram of both development and cloud deployment:
+
+- Frontend: Next.js | TypeScript | Material-UI | TailwindCSS | Redux | Axios | HTML5 | CSS3
+- Backend: Nest.js | TypeScript | JWT | Mailgun | Jest | Mongoose | AWS S3 | Multer | OpenAI | Stripe
 - Database: MongoDB Atlas
-- Devops: Route53，Cloudfront，ACM，docker， ECR， ECS+fargate，Github-actions，Snyk，Cloudwatch+Grafana UI， Locust
+- Deployment: Github Action | docker | ECS+fargate | ECR | Route53 | Cloudfront | ACM | Snyk | Cloudwatch+Grafana UI | Locust
 
-#### Website Link
+#### Web Application Architecture Diagram
 
-https://www.fotopie.net
+<img  src="https://fotopie.s3.ap-southeast-2.amazonaws.com/Screenshot+2023-04-26+at+1.57.18+pm.png">
 
-#### Project Demo Video
+#### Cloud Deployment Architecture Diagram
 
-https://www.youtube.com/watch?v=UIU60Df_6As
+<img  src="https://fotopie.s3.ap-southeast-2.amazonaws.com/Screenshot+2023-04-26+at+1.23.28+pm.png">
 
-#### Project Presentation PPT and Architecture Diagram
+# Getting Started With Local Environment
 
-https://docs.google.com/presentation/d/1otJGb2hXdSa67m8ohIz0hXbbqWC3Hhqr4GRfu3878Lo/edit?usp=sharing
-
-#### Back-end Repo
-
-https://github.com/Go-Husky-FotoPie/FotoPie-Back-end.git
-
-#### Getting Started
+Before you start, please make sure you have the following installed: Node.js, npm, MongoDB, and Git. Following these simple steps to get FotoPie up and running on your local machine:
 
 1. Clone the repository to your local machine:
+
+   ```bash
    git clone -b dev https://github.com/Go-Husky-FotoPie/FotoPie-Front-end.git
+   ```
 
 2. Install dependencies:
 
-   - cd FotoPie-Front-end
-   - npm install
+   ```bash
+   cd FotoPie-Back-end
+   npm install
+   ```
 
 3. Add .env file
 
 4. Start the Server:
-   npm run dev
 
-#### Contributors: Team Go Husky
+   ```bash
+   npm run start:dev
+   ```
+
+That's it, you are good to go! Happy hacking!
+
+# Usefull Links
+
+Feel free to checkout our website, github repo, linkedin page and join our community in gather.town:
+
+- Website: https://www.fotopie.net
+- Backend Repo: https://github.com/Go-Husky-FotoPie/FotoPie-Back-end.git
+- Linkedin: https://www.linkedin.com/company/fotopie/
+- Gather: https://app.gather.town/invite?token=LkPMDXHXT0-nP99Pf4HQ
+
+# Contributing
+
+FotoPie is an open-source project. We are committed to a fully transparent development process and highly appreciate any contributions. Whether you are helping us fix bugs, proposing new features, improving our documentation or spreading the word - we would love to have you as a part of the FotoPie community.
+
+# Contributors: Team Go Husky
+
+Thanks goes to these amazing people:
 
 Developers:
 
@@ -65,6 +103,6 @@ DevOps:
 - Jane
 - Hang Zhao
 - Shelton Chin
-- Ziqi Wang
+- Ziqi Wang (Testing pipeline)
 - Shuting Xu
 - Charles Cheng
