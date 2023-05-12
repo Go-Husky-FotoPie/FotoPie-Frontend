@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchNotifications } from "../../../store/notification/notifyAction";
-import { AppDispatch, RootState } from "../../../store/store";
+import { fetchNotifications } from "../../store/notification/notifyAction";
+import { AppDispatch, RootState } from "../../store/store";
 import Loading from "./Loading";
 import NoNotification from "./NoNotification";
 import NotificationList from "./NotificationList";

@@ -4,7 +4,7 @@ import CollectButton, {
   CollectButtonProps,
 } from "../src/components/PhotoQuickView/CollectButton";
 import { Provider } from "react-redux";
-import { store } from "../store/store";
+import { store } from "../src/store/store";
 import mockedRouter from "next-router-mock";
 
 const renderCollectButton = (props: Partial<CollectButtonProps> = {}) => {

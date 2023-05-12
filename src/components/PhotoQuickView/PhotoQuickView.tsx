@@ -2,11 +2,11 @@ import { useEffect, FC } from "react";
 import { NextRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { getInitialData } from "../../axiosRequest/api/photoQuickView";
-import { AppDispatch, RootState } from "../../../store/store";
+import { AppDispatch, RootState } from "../../store/store";
 import {
   setQuickViewData,
   setLoading,
-} from "../../../store/photoQuickView/quickViewSlice";
+} from "../../store/photoQuickView/quickViewSlice";
 import DownloadImage from "./DownloadImage";
 import PostImage from "./PostImage";
 import CollectButton from "./CollectButton";
