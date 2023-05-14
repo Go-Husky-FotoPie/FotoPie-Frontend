@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { Notification } from "../../../store/notification/types";
+import { Notification } from "../../store/notification/types";
 import Item from "./Notification.style";
 import PhotoQuickView from "../PhotoQuickView/PhotoQuickView";
 import { useRouter } from "next/router";

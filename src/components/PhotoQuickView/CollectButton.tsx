@@ -2,8 +2,8 @@ import { Button, IconButton } from "@mui/material";
 import AddToPhotosIcon from "@mui/icons-material/AddToPhotos";
 import { NextRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../store/store";
-import { updateCollect } from "../../../store/photoQuickView/quickViewAciton";
+import { AppDispatch } from "../../store/store";
+import { updateCollect } from "../../store/photoQuickView/quickViewAciton";
 
 export interface CollectButtonProps {
   filenameString: string | string[] | undefined;

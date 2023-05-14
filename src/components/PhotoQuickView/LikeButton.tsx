@@ -1,9 +1,9 @@
 import { Button, IconButton } from "@mui/material";
 import { NextRouter } from "next/router";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { updateLike } from "../../../store/photoQuickView/quickViewAciton";
+import { updateLike } from "../../store/photoQuickView/quickViewAciton";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../store/store";
+import { AppDispatch } from "../../store/store";
 
 export interface LikeButtonProps {
   filenameString: string | string[] | undefined;

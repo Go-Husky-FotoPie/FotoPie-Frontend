@@ -10,13 +10,16 @@ import {
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
+import { RootState } from "../../store/store";
 import { getMe } from "../../axiosRequest/api/editUser";
 import { useCheckToken } from "../../hooks/useCheckToken";
-import { getImageQuality, getToken, sendQualityRank } from "../../axiosRequest/api/imageQuality";
+import {
+  getImageQuality,
+  getToken,
+  sendQualityRank,
+} from "../../axiosRequest/api/imageQuality";
 import axios from "axios";
 import LinearProgress from "@mui/material/LinearProgress";
-
 
 interface ImageQualityButtonProps {
   filenameString: string | string[] | undefined;
@@ -29,7 +32,9 @@ const currentLoginUserId = async () => {
     return id;
   } catch (error) {}
 };
-const ImageQualityButton: FC<ImageQualityButtonProps> = ({ filenameString }) => {
+const ImageQualityButton: FC<ImageQualityButtonProps> = ({
+  filenameString,
+}) => {
   useCheckToken();
 
   const { userID, isAuthenticated } = useSelector((state: RootState) => ({
@@ -44,7 +49,7 @@ const ImageQualityButton: FC<ImageQualityButtonProps> = ({ filenameString }) => 
   // const [currentUserId, setCurrentUserId] = useState<string | null>(null);
   const [qualityScore, setQualityScore] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  
+
   const router = useRouter();
 
   useEffect(() => {
@@ -56,13 +61,14 @@ const ImageQualityButton: FC<ImageQualityButtonProps> = ({ filenameString }) => 
     fetchUserId();
     if (isSendSuccessful) {
       setTimeout(() => {
-        router.push("/quality-posts")
+        router.push("/quality-posts");
       }, 2000);
     }
   }, [userID, isSendSuccessful]);
 
   const handleGetQualityClick = async () => {
-    const S3Url = "https://fotopie-photo-compression.s3.ap-southeast-2.amazonaws.com";
+    const S3Url =
+      "https://fotopie-photo-compression.s3.ap-southeast-2.amazonaws.com";
     const compressed_url = `${S3Url}/${filenameString}`;
     setIsConfirmationOpen(true);
 
@@ -72,19 +78,22 @@ const ImageQualityButton: FC<ImageQualityButtonProps> = ({ filenameString }) => 
       //setIsLoading(true);
     } catch (error) {
       console.log(error);
-    } 
-    
-    const API_ENDPOINT = "http://localhost:9090"; 
+    }
+
+    const API_ENDPOINT = "http://localhost:9090";
 
     async function getQuality(url: string, data: Record<string, any>) {
-      const response = await axios.get(`${API_ENDPOINT}/api/everypixel/quality`, {
-        params: { url },
-        data,
-      });
+      const response = await axios.get(
+        `${API_ENDPOINT}/api/everypixel/quality`,
+        {
+          params: { url },
+          data,
+        }
+      );
       return response.data;
       console.log(response.data, "debug1");
     }
-    
+
     try {
       //const result = await getQuality(compressed_url, { size: "medium" });
       const result = await getImageQuality(compressed_url);
@@ -117,8 +126,6 @@ const ImageQualityButton: FC<ImageQualityButtonProps> = ({ filenameString }) => 
     }
   };
 
- 
-
   return (
     <>
       {isAuthenticated && isCurrentUserId ? (
@@ -126,8 +133,8 @@ const ImageQualityButton: FC<ImageQualityButtonProps> = ({ filenameString }) => 
           <Typography
             style={{
               fontWeight: "bold",
-              textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)", 
-              color: "#8a2be2", 
+              textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
+              color: "#8a2be2",
             }}
             fontSize={{
               xs: "0.5rem",

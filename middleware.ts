@@ -7,7 +7,7 @@ export function middleware(req: NextRequest) {
 
   if (!isAuth) {
     if (
-      pathname.startsWith("/edituserprofile") ||
+      pathname.startsWith("/edit-profile") ||
       pathname.startsWith("/upload") ||
       pathname.startsWith("/notification")
     ) {
