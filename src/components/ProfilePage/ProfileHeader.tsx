@@ -1,6 +1,6 @@
 import { Avatar, Button, Grid, Typography } from "@mui/material";
 import { FC } from "react";
-import { User } from "../../../pages/profile/[profileUserId]";
+import { User } from "../../pages/profile/[profileUserId]";
 
 interface ProfileHeaderProps {
   user: User | null;

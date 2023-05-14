@@ -5,7 +5,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
-
 interface avatarMenuProps {
   isMenuOpen: boolean;
   anchorEl: null | HTMLElement;
@@ -66,41 +65,40 @@ export default function avatarMenu({
       }}
     >
       <div>
-      <MenuItem
-        component="a"
-        href={`/profile/${id}`}
-        onClick={handleMenuClose}
-        sx={{ ":hover": { bgcolor: "secondary.main" } }}
-      >
-        <ListItemIcon>
-          <PersonIcon />
-        </ListItemIcon>
-        My Profile
-      </MenuItem>
+        <MenuItem
+          component="a"
+          href={`/profile/${id}`}
+          onClick={handleMenuClose}
+          sx={{ ":hover": { bgcolor: "secondary.main" } }}
+        >
+          <ListItemIcon>
+            <PersonIcon />
+          </ListItemIcon>
+          My Profile
+        </MenuItem>
 
-      <MenuItem
-        component="a"
-        href="/edituserprofile"
-        onClick={handleMenuClose}
-        sx={{ ":hover": { bgcolor: "secondary.main" } }}
-      >
-        <ListItemIcon>
-          <ManageAccountsIcon />
-        </ListItemIcon>
-        Edit Profile
-      </MenuItem>
+        <MenuItem
+          component="a"
+          href="/edit-profile"
+          onClick={handleMenuClose}
+          sx={{ ":hover": { bgcolor: "secondary.main" } }}
+        >
+          <ListItemIcon>
+            <ManageAccountsIcon />
+          </ListItemIcon>
+          Edit Profile
+        </MenuItem>
 
-      <MenuItem
-        onClick={handleLogout}
-        sx={{ ":hover": { bgcolor: "secondary.main" } }}
-      >
-        <ListItemIcon>
-          <LogoutOutlinedIcon />
-        </ListItemIcon>
-        Logout
-      </MenuItem>
+        <MenuItem
+          onClick={handleLogout}
+          sx={{ ":hover": { bgcolor: "secondary.main" } }}
+        >
+          <ListItemIcon>
+            <LogoutOutlinedIcon />
+          </ListItemIcon>
+          Logout
+        </MenuItem>
       </div>
     </Menu>
-    
   );
 }

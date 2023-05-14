@@ -8,18 +8,18 @@ import Link from "../../utils/Link";
 import { useState, useEffect } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useSelector, useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "../../../store/store";
+import { AppDispatch, RootState } from "../../store/store";
 import { getMe } from "../../axiosRequest/api/editUser";
 import HamburgerMenu from "./HamburgerMenu";
 import AvatarMenu from "./AvatarMenu";
-import { logout } from "../../../store/auth/authAciton";
+import { logout } from "../../store/auth/authAciton";
 import { useCheckToken } from "../../hooks/useCheckToken";
 import { useRouter } from "next/router";
 import UserIcons from "./UserIcons";
 import {
   getNotificationCountAction,
   markNotificationReadAction,
-} from "../../../store/notificationBell/notificationBellAction";
+} from "../../store/notificationBell/notificationBellAction";
 
 interface NavbarProps {
   isFixed: boolean;

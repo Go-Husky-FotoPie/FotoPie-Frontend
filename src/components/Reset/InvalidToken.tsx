@@ -6,14 +6,11 @@ import { CssBaseline } from "@mui/material";
 
 function InvalidToken() {
   return (
-
-
-
     <Box
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
       }}
     >
       <CssBaseline />
@@ -33,12 +30,20 @@ function InvalidToken() {
           }}
         >
           <Box
-            sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
           >
             <img
               src="/404.jpg"
               alt=""
-              style={{ objectFit: "contain", maxHeight: "60vh", maxWidth: "100%" }}
+              style={{
+                objectFit: "contain",
+                maxHeight: "60vh",
+                maxWidth: "100%",
+              }}
             />
             <h3>Invalid Token</h3>
 
@@ -53,7 +58,11 @@ function InvalidToken() {
                   },
                 }}
               >
-                <Link href="/reset/reset-request" color="inherit" underline="none">
+                <Link
+                  href="/reset/reset-request"
+                  color="inherit"
+                  underline="none"
+                >
                   Go Back
                 </Link>
               </Button>
@@ -66,8 +75,6 @@ function InvalidToken() {
       </Box>
       <Copyright />
     </Box>
-
-
   );
 }
 

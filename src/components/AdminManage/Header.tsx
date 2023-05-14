@@ -4,8 +4,8 @@ import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { useCheckToken } from "../../hooks/useCheckToken";
-import { AppDispatch, RootState } from "../../../store/store";
-import { logout } from "../../../store/auth/authAciton";
+import { AppDispatch, RootState } from "../../store/store";
+import { logout } from "../../store/auth/authAciton";
 
 //Render header part of admin manager page
 const Header = () => {
