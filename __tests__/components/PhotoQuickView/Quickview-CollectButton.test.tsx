@@ -2,9 +2,9 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import CollectButton, {
   CollectButtonProps,
-} from "../src/components/PhotoQuickView/CollectButton";
+} from "../../../src/components/PhotoQuickView/CollectButton";
 import { Provider } from "react-redux";
-import { store } from "../src/store/store";
+import { store } from "../../../src/store/store";
 import mockedRouter from "next-router-mock";
 
 const renderCollectButton = (props: Partial<CollectButtonProps> = {}) => {

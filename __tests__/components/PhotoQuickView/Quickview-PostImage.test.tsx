@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import PostImage from "../src/components/PhotoQuickView/PostImage";
+import PostImage from "../../../src/components/PhotoQuickView/PostImage";
 
 describe("PostImage Component", () => {
   it("renders the image with the correct src and alt attributes", () => {
