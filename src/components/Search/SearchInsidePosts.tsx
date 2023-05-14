@@ -5,7 +5,7 @@ import NoMore from "../Loader/NoMore";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Masonry from "@mui/lab/Masonry";
 import Box from "@mui/material/Box";
-import { ResponseImageData } from "../../../pages/category/[tag]";
+import { ResponseImageData } from "../../pages/category/[tag]";
 import ErrorAlert from "../LoginForm/ErrorAlert";
 import { searchPosts } from "../../axiosRequest/api/search";
 import Typography from "@mui/material/Typography";
@@ -190,7 +190,7 @@ const SearchPostList = ({
                   sx={{
                     fontSize: "30px",
                     fontWeight: "25px",
-                    marginLeft: { xs:"25px", sm:"43px", md:"43px" },
+                    marginLeft: { xs: "25px", sm: "43px", md: "43px" },
                     marginBottom: "20px",
                     fontFamily: "Work Sans', sans-serif",
                   }}

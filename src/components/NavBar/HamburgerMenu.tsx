@@ -81,7 +81,7 @@ export default function hamburgerMenu({
           </MenuItem>
           <MenuItem
             component="a"
-            href="/edituserprofile"
+            href="/edit-profile"
             sx={{ ":hover": { bgcolor: "secondary.main" } }}
           >
             <IconButton size="large" color="inherit">

@@ -14,14 +14,15 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
-    "incremental": true
+    "incremental": true,
+    "types": ["jest", "@types/testing-library__jest-dom"]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "store/reducers.ts",
-    "store/ContextProvider.tsx"
+    "src/store/reducers.ts",
+    "src/store/ContextProvider.tsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "cypress", "cypress.config.ts"]
 }

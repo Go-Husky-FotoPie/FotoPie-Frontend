@@ -6,16 +6,16 @@ import {
   DialogActions,
   DialogContentText,
   Typography,
-  IconButton
+  IconButton,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
+import { RootState } from "../../store/store";
 import { getMe } from "../../axiosRequest/api/editUser";
 import { deletePost } from "../../axiosRequest/api/userPost";
 import { useCheckToken } from "../../hooks/useCheckToken";
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 // import {useDeleteSuccessful} from "../../hooks/useDeleteSuccessful";
 
 interface DeletePostButtonProps {
@@ -28,7 +28,7 @@ const currentLoginUserId = async () => {
     const response = await getMe();
     const { id } = response.data;
     return id;
-  } catch (error) { }
+  } catch (error) {}
 };
 const DeletePostButton: FC<DeletePostButtonProps> = ({ filenameString }) => {
   useCheckToken();
@@ -56,9 +56,8 @@ const DeletePostButton: FC<DeletePostButtonProps> = ({ filenameString }) => {
     if (isDeleteSuccessful) {
       setTimeout(() => {
         window.location.reload();
-      }, 2000)
+      }, 2000);
     }
-
   }, [userID, isDeleteSuccessful]);
 
   //useMemo (chatgpt optimization)
@@ -107,7 +106,7 @@ const DeletePostButton: FC<DeletePostButtonProps> = ({ filenameString }) => {
               display: { xs: "none", sm: "none", md: "flex" },
               //bgcolor: "primary.main",
               bgcolor: "#E8EAF6",
-              
+
               textTransform: "none",
               fontSize: "1.2rem",
             }}
