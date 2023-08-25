@@ -101,8 +101,8 @@ BA:
 DevOps:
 
 - Jane
+- Ziqi Wang
 - Hang Zhao
 - Shelton Chin
-- Ziqi Wang (Testing pipeline)
 - Shuting Xu
 - Charles Cheng
